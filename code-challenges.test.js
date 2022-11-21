@@ -181,6 +181,7 @@ const accTran2 = (array2) => {
 
 const accTran3 = (array3) => {
   return array3.map((sum => value => sum += value)(0))
+}
 
 
 // For the above problems I pseudocoded to the best of my ability. 
