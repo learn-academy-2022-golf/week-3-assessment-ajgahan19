@@ -1,11 +1,11 @@
 <!-- ASSESSMENT 3: React Debugging Challenge -->
-
+ 
 <!-- This file contains a React component in an HTML file. This React code is broken. Fix the THREE bugs in the code so the user can draw cards and reset the deck. Note: The component is correctly described in this file structure. There is no need to change the architecture of any code. -->
 
 <!-- To see this app render, open the file in your browser by going to file >> open file >> and finding the appropriate file location. -->
 
 <!-- HINT: Check the console in the browser developer tools for errors. The lines numbers may not match up with the line numbers in your text editor. -->
-
+//There was no variable for onClick button!
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -63,10 +63,21 @@
           padding: "10px"
         }
         // No need to change anything ABOVE this line ^
-
+           
         return (
+          <>      
+            <h1>Deck of Cards</h1>
+            <button onClick={drawCard}>Draw a Card</button>
+            <button onClick={shuffle}>Shuffle</button>
+            <div style={handStyles}>
+              {hand.map((card, i) => (
+                <div key={i} style={cardStyles}>
+                  <h2>{card}</h2>
+                </div>
+              ))}
+            </div>
           <h1>Draw a Card</h1>
-          <button onClick={}>
+          <button onClick={drawCard}>
             Click to Draw a Card
           </button>
           <button onclick={shuffle}>
@@ -81,9 +92,10 @@
               )
             })}
           </div>
+          </>
         )
       }
-
+      //Added a <> /</> to wrap the code
       // No need to change anything below this line
 
       const domContainer = document.querySelector('#react-container')
